@@ -1,5 +1,9 @@
 # COVID-19 Discord Webhook Service Indonesia
-Setiap orang saat ini ingin mengetahui perkembangan tentang COVID-19 yang terjadi di Indonesia, maka dari itu saya membuat Service ini untuk mengetahui perkembangan COVID-19 Melalui Discord Channel
+Setiap orang saat ini ingin mengetahui perkembangan tentang COVID-19 yang terjadi di Indonesia, maka dari itu saya membuat Service ini untuk mengetahui perkembangan COVID-19 Melalui Discord Channel.
+
+Aplikasi ini akan melakukan cek kasus secara terus menerus dengan waktu yang telah di config apakah ada yang terbaru:
+- jika ya maka aplikasi ini akan mengirim pesan melalui discord channel
+- jika tidak maka aplikasi ini akan diam aja.
 
 ## Project Goals
 - Mengetahui angka terkonfirmasi
