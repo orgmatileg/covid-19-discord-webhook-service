@@ -48,9 +48,15 @@ func main() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
 	viper.AddConfigPath(".")
+	viper.AddConfigPath("/app/")
+
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("could not read config: %s", err))
+	}
+
+	if viper.GetString("discord_webhook") == "FILL YOUR DISCORD WEBHOOK URL" {
+		panic(fmt.Errorf("Please dont use default config, edit your discord_webhook config"))
 	}
 
 	sigs := make(chan os.Signal, 1)
@@ -69,7 +75,6 @@ func main() {
 		for {
 			select {
 			case <-ticker.C:
-
 				doJob()
 			}
 		}
