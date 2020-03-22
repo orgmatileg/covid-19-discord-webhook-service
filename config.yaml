@@ -1,0 +1,5 @@
+# 1s = 1 Second
+# 1m = 1 Minute
+# 1h = 1 Hour
+check_every: 1s
+discord_webhook: FILL YOUR DISCORD WEBHOOK URL
