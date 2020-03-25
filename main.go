@@ -112,9 +112,21 @@ func doJob() {
 	if storedResponse == nil {
 		storedResponse = &data
 	} else {
-		if data.LastUpdate.Unix() == storedResponse.LastUpdate.Unix() {
+
+		isSameResult := func() bool {
+			if data.Deaths.Value != storedResponse.Deaths.Value ||
+				data.Recovered.Value != storedResponse.Recovered.Value ||
+				data.Confirmed.Value != storedResponse.Confirmed.Value {
+				return false
+			}
+
+			return true
+		}()
+
+		if isSameResult {
 			return
 		}
+
 	}
 
 	p := hitungPersentasi(&data)
