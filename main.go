@@ -114,13 +114,13 @@ func doJob() {
 	} else {
 
 		isSameResult := func() bool {
-			if data.Deaths.Value == storedResponse.Deaths.Value ||
+			if data.Deaths.Value != storedResponse.Deaths.Value ||
 				data.Recovered.Value != storedResponse.Recovered.Value ||
 				data.Confirmed.Value != storedResponse.Confirmed.Value {
-				return true
+				return false
 			}
 
-			return false
+			return true
 		}()
 
 		if isSameResult {
