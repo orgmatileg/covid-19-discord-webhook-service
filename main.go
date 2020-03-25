@@ -114,19 +114,20 @@ func doJob() {
 	} else {
 
 		isSameResult := func() bool {
-			if data.Deaths.Value != storedResponse.Deaths.Value ||
+			if data.Deaths.Value == storedResponse.Deaths.Value ||
 				data.Recovered.Value != storedResponse.Recovered.Value ||
 				data.Confirmed.Value != storedResponse.Confirmed.Value {
-				return false
+				return true
 			}
 
-			return true
+			return false
 		}()
 
 		if isSameResult {
 			return
 		}
 
+		storedResponse = &data
 	}
 
 	p := hitungPersentasi(&data)
